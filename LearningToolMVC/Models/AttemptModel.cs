@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace LearningToolMVC.Models
 {
-    public class DefinitionModel
+    public class AttemptModel
     {
         [Key]
         public int Id { get; set; }
-        [Required]
-        public string Sentence { get; set; }
-        [Required]
-        public string Meaning { get; set; }
+        public string Attempt { get; set; }
+        public bool IsCorrect { get; set; }
 
-        public List<AttemptModel> Attempts { get; set; }
+        public int DefinitionId { get; set; }
+        public DefinitionModel Definition { get; set; }
     }
 }
