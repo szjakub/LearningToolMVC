@@ -14,5 +14,6 @@ namespace LearningToolMVC.Models
         }
 
         public DbSet<DefinitionModel> Definitions { get; set; }
+        public DbSet<AttemptModel> Attempts { get; set; }
     }
 }
