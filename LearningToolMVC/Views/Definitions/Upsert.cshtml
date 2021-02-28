@@ -1,0 +1,43 @@
+﻿@model LearningToolMVC.Models.DefinitionModel
+
+<br />
+<h2>@(Model.Id !=0 ? "Edit" : "Create") Definition</h2>
+<br />
+
+<div class="border container shadow" style="padding:30px;">
+    <form method="post">
+        @if (Model.Id != 0)
+        {
+            <input type="hidden" asp-for="Id" />
+        }
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+
+            <div class="col-6">
+                <label asp-for="Sentence"></label>
+                <input asp-for="Sentence" class="form-control" />
+                <span asp-validation-for="Sentence" class="text-danger"></span>
+            </div>
+
+            <div class="col-6">
+                <label asp-for="Meaning"></label>
+                <input asp-for="Meaning" class="form-control" />
+                <span asp-validation-for="Meaning" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <button type="submit" class="btn btn-primary form-control">
+                    Save
+                </button>
+            </div>
+            <div class="col-3">
+                <a asp-action="Index" class="btn btn-success form-control">Back to List</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,34 @@
+﻿<br />
+
+<div class="container row p-0 m-0">
+
+    <div class="col-12">
+        <div class="float-left mr-3">
+            <h2>Definitions List</h2>
+        </div>
+        <div>
+            <a asp-action="Upsert" asp-controller="Definitions" class="btn btn-info text-white">
+                New
+            </a>
+            <a asp-action="Index" asp-controller="Attempts" class="btn btn-success text-white">
+                Test
+            </a>
+        </div>
+    </div>
+
+    <div class="col-12 border p-3 shadow">
+        <table id="DT_load" class="table table-stripped table-borderless" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Sentence</th>
+                    <th>Meaning</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/definitionsList.js"></script>
+}
