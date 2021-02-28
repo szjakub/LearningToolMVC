@@ -63,7 +63,22 @@ namespace LearningToolMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Json(new { data = await _db.Attempts.ToListAsync() });
+            var result = new List<Dictionary<string, string>>();
+            var attempts = await _db.Attempts.ToListAsync();
+
+            foreach(var attempt in attempts)
+            {
+                var definition = await _db.Definitions
+                    .FirstOrDefaultAsync(u => u.Id == attempt.DefinitionId);
+                var row = new Dictionary<string, string>();
+                row.Add("id", attempt.Id.ToString());
+                row.Add("attempt", attempt.Attempt);
+                row.Add("isCorrect", attempt.IsCorrect.ToString());
+                row.Add("sentence", definition.Sentence);
+                row.Add("meaning", definition.Meaning);
+                result.Add(row);
+            }
+            return Json(new { data = result });
         }
 
         [HttpGet]
