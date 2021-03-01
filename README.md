@@ -8,12 +8,11 @@
 1. Clone the repo using git
 
 ``` git clone https://github.com/szjakub/LearningToolMVC.git```
+2. Open solution in Visual Studio
 
-2. Change database server URI in ```appsettings.json```
+3. Change database server URI in ```appsettings.json```
 
 ```Server=localhost\\MSSQLSERVER01``` -> ```Server=your_sql_server_URI```
-
-3. Open solution in Visual Studio
 
 4. Open package manager console
 
@@ -23,7 +22,7 @@
 
 6. Run application
 
-  
+
 
 ## Authors
 
