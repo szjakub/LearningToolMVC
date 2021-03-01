@@ -70,12 +70,12 @@ namespace LearningToolMVC.Controllers
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            var bookFromDb = await _db.Definitions.FirstOrDefaultAsync(u => u.Id == id);
-            if (bookFromDb == null)
+            var defFromDb = await _db.Definitions.FirstOrDefaultAsync(u => u.Id == id);
+            if (defFromDb == null)
             {
                 return Json(new { success = false, message = "Error while Deleting" });
             }
-            _db.Definitions.Remove(bookFromDb);
+            _db.Definitions.Remove(defFromDb);
             await _db.SaveChangesAsync();
             return Json(new { success = true, message = "Delete successfull" });
         }

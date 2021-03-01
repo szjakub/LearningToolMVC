@@ -17,9 +17,5 @@ namespace LearningToolMVC.Models
         public int DefinitionId { get; set; }
         public DefinitionModel Definition { get; set; }
 
-        internal void Remove(string key)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

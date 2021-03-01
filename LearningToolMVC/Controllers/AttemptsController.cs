@@ -80,13 +80,13 @@ namespace LearningToolMVC.Controllers
             }
             return Json(new { data = result });
         }
-
+        /*
         [HttpGet]
         public async Task<IActionResult> GetStatistics()
         {
             var stats = await _db.Attempts
                 .FromSqlRaw(@"
-                    SELECT COUNT(*) as count, IsCorrect, Sentence, Meaning, 1 as Id, 's' as Attempt, 1 as DefinitionId       
+                    SELECT COUNT(*) as count, IsCorrect, Sentence, Meaning    
                     FROM Attempts
                     LEFT JOIN Definitions ON DefinitionId = Definitions.Id
                     GROUP BY IsCorrect, Sentence, Meaning"
@@ -95,5 +95,6 @@ namespace LearningToolMVC.Controllers
 
             return Json(new { data = stats });
         }
+        */
     }
 }
